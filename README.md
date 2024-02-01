@@ -5,10 +5,11 @@ Código criado a partir das aulas do curso "Node.js: lidando com buscas, filtros
 Utilizando middlewares para tratativa de erros reutilizando codigos refatorados, criando filtros e buscas no banco de dados, criando paginação na busca dos dados.
 
 
-# Rotas #
+# Rotas
 
-/livros
-Metodo GET para buscar todos os livros, parametros (limite) para numero de resultados por pagina deve ter o valor de um número inteiro, (pagina) para escolher a pagina mostrada deve ter o valor de um número inteiro, (ordenacao) para ordenar os resultados deve ter o valor de um atributo do livro seguito de ":" e o numero 1 para crescente e -1 para decrescente.
+## /livros
+
+Método GET para buscar todos os livros, parâmetros (limite) para número de resultados por página devem ter o valor de um número inteiro, (pagina) para escolher a página mostrada deve ter o valor de um número inteiro, (ordenacao) para ordenar os resultados deve ter o valor de um atributo do livro seguido de ":" e o número 1 para crescente e -1 para decrescente.
 
 Exemplo:
 
@@ -16,20 +17,38 @@ Exemplo:
 http://localhost:3000/livros?limite=5&pagina=2&ordenacao=numeroPaginas:-1
 ```
 
-Metodo POST para cadastrar novos livros com o body utilizando os atributos de um livro.
+Método POST para cadastrar novos livros com o body utilizando os atributos de um livro.
 
-/livros/:id
-Metodo GET para buscar livro com o id informado.
+## /livros/:id
 
-Metodo PUT para atualizar o livro com o id informado com os atributos passados pelo body.
+Método GET para buscar livro com o ID informado.
 
-Metodo DELETE para deletar o livro com o id informado.
+Método PUT para atualizar os dados do livro com o ID informado utilizando os atributos passados pelo body.
 
-/livros/busca
-Metodo GET para buscar livros utilizando os parametros (editora, titulo, minPaginas, maxPaginas e nomeAutor) e utilizando os mesmo parametros de paginação com (limite,pagina e ordenacao).
+Método DELETE para deletar o livro com o ID informado.
+
+## /livros/busca
+
+Método GET para buscar livros utilizando os parâmetros (editora, titulo, minPaginas, maxPaginas e nomeAutor) e utilizando os mesmos parâmetros de paginação com (limite, pagina e ordenacao).
 
 Exemplo:
 
+```
+http://localhost:3000/livros/busca?nomeAutor=JRR Tolkien&limite=5&pagina=1&ordenacao=numeroPaginas:1
+```
+## /autores 
+
+Método GET para buscar todos os autores utilizando os mesmos parâmetros de paginação da rota livros (limite, pagina e ordenacao).
+
+Método POST para cadastrar novos autores com os atributos passados pelo body.
+
+## /autores/:id 
+
+Método GET para buscar autor com o ID informado.
+
+Método PUT para atualizar os dados do autor com o ID informado utilizando os atributos passados pelo body.
+
+Método DELETE para deletar o autor com o ID informado.
 
 # Installação
  Para executar o código, é necessário ter o Node.js instalado e instalar as dependências executando o comando correspondente. 
